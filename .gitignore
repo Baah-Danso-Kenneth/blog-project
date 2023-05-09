@@ -2,4 +2,6 @@ venv/
 /venv
 .idea/
 /.idea
+pycache/
+.pycache
 db.sqlite3
