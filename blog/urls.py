@@ -1,7 +1,9 @@
 from django.urls import path
-from django.views.generic import TemplateView
+from . import views
+
 app_name = "blog"
 
 urlpatterns = [
-    path('',TemplateView.as_view(template_name='blog/index.html'))
+    path('', views.post_list, name="post_list"),
+    path('<int:year>/<int:month>/<int:day>/<slug:post>/', views.post_detail, name='post_detail')
 ]
