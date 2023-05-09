@@ -1,7 +1,9 @@
 from django.urls import path
-from django.views.generic import TemplateView
+from .views import post_list, post_detail
+
 app_name = "blog"
 
 urlpatterns = [
-    path('',TemplateView.as_view(template_name='blog/index.html'))
+    path('',post_list,name="post_list"),
+    path('<int:id>',post_detail,name='post_detail')
 ]
